@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "woo-mysite",
+    "mysite": "woo-mysite"
+  }
+}
