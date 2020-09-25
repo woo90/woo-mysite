@@ -2,33 +2,27 @@
 new Window({ offset: 200, animateCass: 'wow-ani', mobile: false}).init();
 
 (function(){
-	var slides = [
-		{ id: 0, src: '../img/landing-img-top-1.jpg', title: '피자' },
-		{ id: 1, src: '../img/landing-img-top-3.jpg', title: '여자' },
-		{ id: 2, src: '../img/landing-img-top-4.jpg', title: '남자' },
-	];
-
-	var $slideStage = $(".header-wrapper .stage");
 	var $slideWrap = $(".header-wrapper .slide-wrap");
 	var $btnPrev = $(".header-wrapper .btn-prev");
 	var $btnNext = $(".header-wrapper .btn-next");
-
+	var n =0;
 	var $slides = [];
 	var idx = 0;
 	var lastIdx = slides.length - 1;
 	var interval;
+	init();
 
-	function init(){
-		var html, i;
-		for( i in slides){
-			html = '<div class="slide">';
-			html += '<img class="w-100" src="'+slides[i].src+'">';
-			html += '<h1>'+i+'</h1>';
-			html += '<div class="title">'+slides[i].title+'</div>';
-			html += '</div>';
-			$slides[i] = $(html);
+	function init() {
+		for(var i=0; i<$slides.length; i++) {
+			$pagerWrap.append('<div class="pager">·</div>');
 		}
+		$pagerWrap.find(".pager").eq(idx).addClass("active");
+		$pagerWrap.find(".pager").click(onClick);
+		interval = setInterval(onInterval, 3000);
+		$stage.mouseenter(onEnter).mouseleave(onLeave);
+		slideInit();
 	}
+	
 function slideInit() {
 	var $my= $($slides[idx].clone()).appendTo($slideWrap.empty());
 	$my.find(".title").css("opacity");
@@ -62,7 +56,6 @@ function ani() {
 	
 	setTimeout(slideInit, 500);
 }
-init();
 
 
-})
+})();

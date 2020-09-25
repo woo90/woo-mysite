@@ -14,23 +14,38 @@ html, body{font-family: 'Oswald', sans-serif;}
 .x33 {flex: calc(33.3333% - 32px) 0 0; margin: 16px;}
 .x25 {flex: calc(25% - 32px) 0 0; margin: 16px;}
 
-/****** .header *********************************/
+/****** .header-wrapper *********************************/
 .header-wrapper{width: 100%; height: 35vh;}
 
 .header-wrapper .stage{width: 100%; overflow: hidden; position: relative;}
-.header-wrapper .slide-wrap{position: absolute; width: 100%; height: 100%;}
-.header-wrapper .slide{width: 100%; height: 100%; transition: all 0.5s; background-size: cover; background-repeat: no-repeat; background-position: center;}
-.header-wrapper .slide:nth-child(1){position: absolute; top: 0; left: 0;opacity: 1;}
-.header-wrapper .slide:nth-child(2){position: absolute; top: 0; left: 0;opacity: 0;}
-.header-wrapper .slide:nth-child(3){position: absolute; top: 0; left: 0;opacity: 0;}
+.header-wrapper .slide-wrap{position: relative; width: 100%; height: 100%;}
+.header-wrapper .slide{position: absolute; width: 100%; height: 100%; top: 0; transition: all 0.5s; background-size: cover; background-repeat: no-repeat; background-position: center;}
+.header-wrapper .slide:nth-child(1){position: relative; left: 0;}
+.header-wrapper .slide:nth-child(2){left: 100%;}
+.header-wrapper .slide:nth-child(3){left: 200%;}
+.header-wrapper .slide:nth-child(4){left: 300%;}
 .header-wrapper .btn-prev, .header-wrapper .btn-next{font-size: 3vh; color: #aa531b;  position: absolute; z-index: 10; top: 20%; justify-content: center; align-items: center;}
 .header-wrapper .btn-next{right: 0;}
 .header-wrapper .btn-prev:hover, .header-wrapper .btn-next:hover{opacity: .7;}
 
-.link-wrapper {background-image: url(../img/landing-rev-3-img-5.png) no-repeat left;}
-.link-wrapper .link-wrap{width: 100%;font-size: 50px; margin-left: 20px;}
 
-
+/**************** .link-wrapper **************/
+.link-wrapper{width: 100%; display: flex; flex-wrap: wrap; padding: 16px; margin-top: -32px;}
+.link-wrap { background-image: url(../img/landing-rev-3-img-5.png) no-repeat left;}
+.link-wrap .link-mid{width: 100%; display: flex; justify-content: space-between; align-items: center;}
+.link-wrap .link-mid .link-lt{font-size: 40px; padding: 145px 0 159px 67px;}
+.link-wrap .link-mid .link-rt{font-size: 12px;  font-weight: 500; font-family: 'Oswald', sans-serif; padding: 15px 48px; color: #f8f8f8; background-color: #d2401e;}
+.link-wrapper .cont-wrapper{width: 100%;}
+.link-wrapper .cont-wrapper > .cont{width: 33.3333%; height: 440px; display: inline-flex;}
+.cont-wrapper > .cont:nth-child(1) {background: url(../img/landing-home-1.jpg) no-repeat left;}
+.cont-wrapper > .cont:nth-child(2) {background: url(../img/landing-home-2.jpg) no-repeat left;}
+.cont-wrapper > .cont:nth-child(3) {background: url(../img/landing-home-3.jpg) no-repeat left;}
+.cont-wrapper > .cont:nth-child(4) {background: url(../img/landing-home-4.jpg) no-repeat left;}
+.cont-wrapper > .cont:nth-child(5) {background: url(../img/landing-home-5.jpg) no-repeat left;}
+.cont-wrapper > .cont:nth-child(6) {background: url(../img/landing-home-6.jpg) no-repeat left;}
+.cont-wrapper > .cont:hover{}
+.cont-wrapper .cont{left: 32px; bottom: 32px;}
+.cont-wrapper .cont .title{cursor: pointer; margin-bottom: 16px;}
 
 
 
