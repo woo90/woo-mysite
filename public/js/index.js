@@ -16,7 +16,7 @@
 	var idx = 0;
 	var lastIdx = slides.length - 1;
 	var interval;
-
+	
 	function init() {
 		var html;
 		for (i in slides) {

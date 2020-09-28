@@ -18,27 +18,42 @@ html, body{font-family: 'Oswald', sans-serif;}
 .header-wrapper .stage{width: 100%; position: relative; overflow: hidden;}
 .header-wrapper .slide-wrap{position: relative;}
 .header-wrapper .slide:nth-child(2){position: absolute; top: 0; left: 0; opacity: 0;}
-.header-wrapper .btn-prev, .header-wrapper .btn-next{ cursor: pointer; font-size: 2vw; color: #a1523a; position: absolute; z-index: 10; top: calc(50% - 2vw); opacity: 1;}
+.header-wrapper .btn-prev, .header-wrapper .btn-next{ cursor: pointer; font-size: 2vw; color: #a1523a; position: absolute; z-index: 10; top: calc(50% - 2vw);}
 .header-wrapper .btn-next{right: 0;}
+.header-wrapper .peppe{position: absolute; border: 1px solid red;}
 
 
 /**************** .link-wrapper **************/
 .link-wrapper{width: 100%; display: flex; flex-wrap: wrap; padding: 16px; margin-top: -32px;}
-.link-wrap { background-image: url(../img/landing-rev-3-img-5.png) no-repeat left;}
+.link-wrap {width: 100%; background-image: url(../img/landing-rev-3-img-5.png); border: 1px solid red; margin-bottom: 30px;}
 .link-wrap .link-mid{width: 100%; display: flex; justify-content: space-between; align-items: center;}
 .link-wrap .link-mid .link-lt{font-size: 40px; padding: 145px 0 159px 67px;}
 .link-wrap .link-mid .link-rt{font-size: 12px;  font-weight: 500; font-family: 'Oswald', sans-serif; padding: 15px 48px; color: #f8f8f8; background-color: #d2401e;}
-.link-wrapper .cont-wrapper{width: 100%;}
-.link-wrapper .cont-wrapper > .cont{width: 33.3333%; height: 440px; display: inline-flex;}
+
+.cont-wrapper{display: flex; flex-wrap: wrap;}
+.cont-wrapper .cont{height: 500px; padding: 20px; transition: all 0.5s;}
 .cont-wrapper > .cont:nth-child(1) {background: url(../img/landing-home-1.jpg) no-repeat left;}
 .cont-wrapper > .cont:nth-child(2) {background: url(../img/landing-home-2.jpg) no-repeat left;}
 .cont-wrapper > .cont:nth-child(3) {background: url(../img/landing-home-3.jpg) no-repeat left;}
 .cont-wrapper > .cont:nth-child(4) {background: url(../img/landing-home-4.jpg) no-repeat left;}
 .cont-wrapper > .cont:nth-child(5) {background: url(../img/landing-home-5.jpg) no-repeat left;}
 .cont-wrapper > .cont:nth-child(6) {background: url(../img/landing-home-6.jpg) no-repeat left;}
-.cont-wrapper > .cont:hover{}
+.cont-wrapper > .cont:hover{transform: translateY(-20px);}
 .cont-wrapper .cont{left: 32px; bottom: 32px;}
 .cont-wrapper .cont .title{cursor: pointer; margin-bottom: 16px;}
+
+
+/**************** .banner-wrap **************/
+
+.banner-wrap{width: 100%; position: relative;}
+.banner-wrap .pizza-bg{width: 100%;}
+.banner-wrap .pizza-heaven{width: 100%; position: absolute; top: 0; left: 0;}
+
+
+
+
+
+
 
 
 @media screen and (max-width: 991px){
