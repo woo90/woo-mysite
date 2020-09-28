@@ -15,18 +15,11 @@ html, body{font-family: 'Oswald', sans-serif;}
 .x25 {flex: calc(25% - 32px) 0 0; margin: 16px;}
 
 /****** .header-wrapper *********************************/
-.header-wrapper{width: 100%; height: 35vh;}
-
-.header-wrapper .stage{width: 100%; overflow: hidden; position: relative;}
-.header-wrapper .slide-wrap{position: relative; width: 100%; height: 100%;}
-.header-wrapper .slide{position: absolute; width: 100%; height: 100%; top: 0; transition: all 0.5s; background-size: cover; background-repeat: no-repeat; background-position: center;}
-.header-wrapper .slide:nth-child(1){position: relative; left: 0;}
-.header-wrapper .slide:nth-child(2){left: 100%;}
-.header-wrapper .slide:nth-child(3){left: 200%;}
-.header-wrapper .slide:nth-child(4){left: 300%;}
-.header-wrapper .btn-prev, .header-wrapper .btn-next{font-size: 3vh; color: #aa531b;  position: absolute; z-index: 10; top: 20%; justify-content: center; align-items: center;}
+.header-wrapper .stage{width: 100%; position: relative; overflow: hidden;}
+.header-wrapper .slide-wrap{position: relative;}
+.header-wrapper .slide:nth-child(2){position: absolute; top: 0; left: 0; opacity: 0;}
+.header-wrapper .btn-prev, .header-wrapper .btn-next{ cursor: pointer; font-size: 2vw; color: #a1523a; position: absolute; z-index: 10; top: calc(50% - 2vw); opacity: 1;}
 .header-wrapper .btn-next{right: 0;}
-.header-wrapper .btn-prev:hover, .header-wrapper .btn-next:hover{opacity: .7;}
 
 
 /**************** .link-wrapper **************/

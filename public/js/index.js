@@ -1,61 +1,64 @@
 /*********************** 초기설정 ************************/
-new Window({ offset: 200, animateCass: 'wow-ani', mobile: false}).init();
+/* new Window({ offset: 200, animateCass: 'wow-ani', mobile: false}).init(); */
 
-(function(){
+(function () {
+	var slides = [
+		{id: 0,src: '../img/landing-img-top-1.jpg',title: '피자'},
+		{id: 1,src: '../img/landing-img-top-3.jpg',title: '여자'},
+		{id: 2,src: '../img/landing-img-top-4.jpg',title: '남자'}
+	];
+
+	var $slideStage = $(".header-wrapper .stage");
 	var $slideWrap = $(".header-wrapper .slide-wrap");
 	var $btnPrev = $(".header-wrapper .btn-prev");
 	var $btnNext = $(".header-wrapper .btn-next");
-	var n =0;
 	var $slides = [];
 	var idx = 0;
 	var lastIdx = slides.length - 1;
 	var interval;
-	init();
 
 	function init() {
-		for(var i=0; i<$slides.length; i++) {
-			$pagerWrap.append('<div class="pager">·</div>');
+		var html;
+		for (i in slides) {
+			html = '<div class="slide">';
+			html += '<img class="w-100" src="' + slides[i].src + '">';
+			html += '</div>';
+			$slides[i] = $(html);
 		}
-		$pagerWrap.find(".pager").eq(idx).addClass("active");
-		$pagerWrap.find(".pager").click(onClick);
-		interval = setInterval(onInterval, 3000);
-		$stage.mouseenter(onEnter).mouseleave(onLeave);
-		slideInit();
+		interval = setInterval(onNext, 3000);
 	}
-	
-function slideInit() {
-	var $my= $($slides[idx].clone()).appendTo($slideWrap.empty());
-	$my.find(".title").css("opacity");
-	$my.find(".title").css("transform");
-	$my.find(".title").css({"opacity" : 1, "transform" : "translateX(0)"});
-}
 
-$btnPrev.click(onPrev);
-$btnNext.click(onNext);
+	function slideInit() {
+		$slideWrap.html($slides[idx].clone());
+	}
 
-function onPrev() {
-	idx = (idx == 0) ? lastIdx : idx - 1;
-	ani();
-}
+	$btnPrev.click(onPrev);
+	$btnNext.click(onNext);
+	$slideStage.mouseover(onHover);
+	$slideStage.mouseleave(onLeave);
 
-function onNext() {
-	idx = (idx == lastIdx) ? 0 : idx + 1;
-	ani();
-}
+	function onHover() {
+		clearInterval(interval);
+	}
 
-function ani() {
-	$pager.removeClass("active").eq(idx).addClass("active");
-	$slideWrap.append($slides[idx].clone());
-	var $slide0 = $slideWrap.find(".slide").eq(0);
-	var $slide1 = $slideWrap.find(".slide").eq(1);
+	function onLeave() {
+		interval = setInterval(onNext, 3000);
+	}
 
-	$slide0.css({"opacity" : 0, "transform" : "scale(1.3)"});
-	$slide1.css("opacity");
-	$slide1.css("transform");
-	$slide1.css({"opacity" : 1, "transform" : "scale(1)"});
-	
-	setTimeout(slideInit, 500);
-}
+	function onPrev() {
+		dix = (idx == 0) ? lastIdx : idx - 1;
+		ani();
+	}
 
+	function onNext() {
+		dix = (idx == lastIdx) ? 0 : idx + 1;
+		ani();
+	}
 
+	function ani() {
+		$($slides[idx].clone()).appendTo($slideWrap).stop().animate({
+			"opacity": 1
+		}, 500, slideInit);
+	}
+	init();
 })();
