@@ -44,10 +44,23 @@ html, body{font-family: 'Oswald', sans-serif;}
 
 
 /**************** .banner-wrap **************/
-
 .banner-wrap{width: 100%; position: relative;}
 .banner-wrap .pizza-bg{width: 100%;}
-.banner-wrap .pizza-heaven{width: 100%; position: absolute; top: 0; left: 0;}
+.banner-wrap .pizza-heaven{width: 40rem; position: absolute; top: 5em; left: 30em;}
+.banner-wrap .heaven-text{position: absolute; top: 8em; left: 20em; color: #fff;}
+
+
+/**************** .online-wrapper **************/
+.online-wrapper{width: 100%;}
+.online-wrap{width: 100%; position: relative;}
+
+
+
+
+
+
+
+
 
 
 
